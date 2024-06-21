@@ -2,9 +2,15 @@ import Card from '../components/Card'
 import { TailwindIndicator } from '../utils/TailwindIndicator'
 import { useFetch } from '../utils/hook/useFetch'
 import { findAuthor } from '../utils/findAuthor'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
     const { posts, users, isLoading, error } = useFetch()
+    const navigate = useNavigate()
+
+    const handlePostClick = (id) => {
+        navigate(`/post/${id}`)
+    }
 
     return (
         <>
@@ -27,6 +33,8 @@ const Home = () => {
                                         img={
                                             'https://placeholderimage.eu/api/600?filter=greyscale'
                                         }
+                                        id={post.id}
+                                        handlePostClick={handlePostClick}
                                     />
                                 )
                             })}
