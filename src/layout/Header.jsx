@@ -11,20 +11,9 @@ const Header = () => {
             <Link to="/">
                 <img src="../../public/thunder-logo.webp" alt="thunder logo" />
             </Link>
-            <nav className='font-semibold"> hidden items-center justify-between gap-4 sm:flex'>
-                <Link to="#" className="hover:text-gray-200">
-                    Home
-                </Link>
-                <Link to="#" className="hover:text-gray-200">
-                    About
-                </Link>
-                <Link to="#" className="hover:text-gray-200">
-                    Contact
-                </Link>
-            </nav>
-            <nav className="flex flex-col items-end gap-1 font-semibold sm:hidden">
+            <nav className="flex flex-col items-end gap-2 font-semibold sm:flex sm:flex-row-reverse sm:gap-4">
                 <button
-                    className="text-xl font-bold hover:text-gray-500 sm:hidden"
+                    className="text-xl font-bold hover:text-gray-200"
                     onClick={() => setShowMenu(!showMenu)}
                 >
                     {showMenu ? <GrClose /> : <GiHamburgerMenu />}
