@@ -11,7 +11,7 @@ const Card = (props) => {
                             {capitalize(title)}
                         </h3>
                     </div>
-                    <div className="max-h-48 overflow-hidden bg-orange-300">
+                    <div className="max-h-48 overflow-hidden">
                         <p className="line-clamp-6 w-auto overflow-hidden text-ellipsis text-base text-gray-700">
                             {capitalize(desc)}
                         </p>
