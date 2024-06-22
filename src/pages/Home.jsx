@@ -3,19 +3,23 @@ import { TailwindIndicator } from '../utils/TailwindIndicator'
 import { useFetch } from '../utils/hook/useFetch'
 import { findAuthor } from '../utils/findAuthor'
 import { useNavigate } from 'react-router-dom'
+import Loader from '../components/Loader'
 
 const Home = () => {
     const { posts, users, isLoading, error } = useFetch()
     const navigate = useNavigate()
 
     const handlePostClick = (id) => {
-        navigate(`/post/${id}`)
+        navigate(`/posts/${id}`)
     }
 
-    return (
+    return error ? (
+        <span>{error}</span>
+    ) : isLoading ? (
+        <Loader />
+    ) : posts ? (
         <>
-            <main className="justify-center">
-                {error && <span>{error}</span>}
+            <main className="justify-center p-4">
                 {isLoading && <p>Chargement...</p>}
                 {posts && users && (
                     <section className="container mx-auto">
@@ -30,9 +34,6 @@ const Home = () => {
                                         author={
                                             author ? author.name : 'Unknown'
                                         }
-                                        img={
-                                            'https://placeholderimage.eu/api/600?filter=greyscale'
-                                        }
                                         id={post.id}
                                         handlePostClick={handlePostClick}
                                     />
@@ -44,6 +45,8 @@ const Home = () => {
             </main>
             <TailwindIndicator />
         </>
+    ) : (
+        <Loader />
     )
 }
 
