@@ -1,6 +1,5 @@
 import { BsMoon, BsSun } from 'react-icons/bs'
 import { useState, useEffect } from 'react'
-import { Button } from '../ui/Button'
 
 export function ThemeToggle() {
     const [theme, setTheme] = useState('light')
