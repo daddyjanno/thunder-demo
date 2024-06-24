@@ -1,3 +1,31 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+body {
+    @apply min-w-[300px] bg-white;
+}
+.dark body {
+    @apply bg-black text-white;
+}
+header {
+    @apply bg-ternary;
+}
+.dark header {
+    @apply bg-black;
+}
+footer {
+    @apply bg-ternary text-primary;
+}
+.dark footer {
+    @apply bg-black;
+}
+button {
+    @apply bg-ternary text-white;
+}
+.dark button {
+    @apply bg-secondary text-quaternary;
+}
+.dark article {
+    @apply bg-black;
+}
