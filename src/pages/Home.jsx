@@ -2,14 +2,23 @@ import Card from '../components/ui/Card'
 import { TailwindIndicator } from '../utils/TailwindIndicator'
 import { useFetch } from '../utils/hook/useFetch'
 import { findAuthor } from '../utils/findAuthor'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Loader from '../components/ui/Loader'
 import Dropdown from '../components/ui/Dropdown'
 import { useState } from 'react'
+import { Button } from '../components/ui/Button'
+import { handleClick } from '../utils/backToHome'
 
 const Home = () => {
     const { posts, users, isLoading, error } = useFetch()
     const [filter, setFilter] = useState('')
+
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        navigate('/')
+        window.scrollTo(0, 0)
+    }
 
     function handleSelect(value) {
         setFilter(value)
@@ -23,7 +32,7 @@ const Home = () => {
         <Loader />
     ) : posts && users ? (
         <>
-            <main className="flex flex-col content-center justify-center gap-4 bg-slate-200 p-4 dark:bg-slate-800">
+            <main className="text-quaternary dark:text-primary flex flex-col content-center justify-center gap-4 bg-white p-4 dark:bg-black">
                 <section>
                     <Dropdown
                         data={users}
@@ -68,6 +77,15 @@ const Home = () => {
                                   )
                               })}
                     </div>
+                </section>
+                <section className="flex">
+                    <Button
+                        text={'Haut de page'}
+                        className={
+                            'bg-ternary text-primary dark:bg-quaternary dark:text-ternary m-2 mx-12 rounded-lg p-2'
+                        }
+                        onClick={() => handleClick(navigate)}
+                    />
                 </section>
             </main>
 
