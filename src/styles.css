@@ -6,7 +6,7 @@ body {
     @apply min-w-[300px] bg-white;
 }
 .dark body {
-    @apply bg-gray-900 text-white;
+    @apply bg-black text-white;
 }
 header {
     @apply bg-ternary;
@@ -27,5 +27,5 @@ button {
     @apply bg-secondary text-quaternary;
 }
 .dark article {
-    @apply bg-black;
+    @apply bg-gray-900;
 }

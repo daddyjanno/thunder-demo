@@ -18,8 +18,8 @@ export function ThemeToggle() {
 
     return (
         <button onClick={toggleTheme} className="dark:bg-transparent">
-            <BsSun className="h-[1.5rem] w-[1.3rem] dark:hidden dark:bg-transparent" />
-            <BsMoon className="dark:text-secondary text-secondary hidden h-5 w-5 bg-transparent hover:text-gray-600 dark:block" />
+            <BsSun className="h-6 w-[1.3rem] dark:hidden dark:bg-transparent" />
+            <BsMoon className="s-5 hidden bg-transparent text-secondary hover:text-gray-600 dark:block dark:text-secondary" />
             <span className="sr-only">Toggle theme</span>
         </button>
     )

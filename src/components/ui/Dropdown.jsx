@@ -14,7 +14,7 @@ const Dropdown = ({ data, onSelectChange, value, label }) => {
                 <label className="dark:text-primary">{label}</label>
                 <div className="flex flex-row items-center justify-center">
                     <select
-                        className="bg-ternary dark:bg-secondary dark:text-quaternary text-primary h-8 rounded-l-md px-2"
+                        className="h-8 rounded-l-md bg-ternary px-2 text-primary dark:bg-secondary dark:text-quaternary"
                         value={value}
                         onChange={handleChange}
                     >
@@ -30,7 +30,7 @@ const Dropdown = ({ data, onSelectChange, value, label }) => {
                     <Button
                         text={'reset'}
                         className={
-                            'bg-ternary h-8 rounded-r-md p-1 px-2 font-thin'
+                            'h-8 rounded-r-md bg-ternary p-1 px-2 font-thin'
                         }
                         onClick={resetDropdown}
                     />

@@ -26,7 +26,7 @@ const Home = () => {
         <Loader />
     ) : posts && users ? (
         <>
-            <main className="text-quaternary dark:text-primary flex flex-col content-center justify-center gap-4 bg-white p-4 dark:bg-black">
+            <main className="flex flex-col content-center justify-center gap-4 p-4 text-quaternary">
                 <section>
                     <Dropdown
                         data={users}
@@ -55,6 +55,7 @@ const Home = () => {
                                               <Card
                                                   post={post}
                                                   author={author}
+                                                  number={post.id}
                                               />
                                           </Link>
                                       )
@@ -76,7 +77,7 @@ const Home = () => {
                     <Button
                         text={'Haut de page'}
                         className={
-                            'bg-ternary text-primary dark:bg-quaternary dark:text-ternary m-2 mx-12 rounded-lg p-2'
+                            'm-2 mx-12 rounded-lg bg-ternary p-2 text-primary dark:bg-quaternary dark:text-ternary'
                         }
                         onClick={() => handleClick(navigate)}
                     />

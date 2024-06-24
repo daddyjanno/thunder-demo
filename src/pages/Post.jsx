@@ -22,14 +22,14 @@ export default function Post() {
             const user = users.find((user) => user.id === post.userId)
             setUser(user)
         }
-    }, [posts, users])
+    }, [posts, users, id, post.userId])
 
     return (
         <>
             <Button
                 text={'Accueil'}
                 className={
-                    'bg-ternary text-primary dark:bg-quaternary dark:text-ternary m-2 mx-12 rounded-lg p-2'
+                    'm-2 mx-12 rounded-lg bg-ternary p-2 text-primary dark:bg-quaternary dark:text-ternary'
                 }
                 onClick={() => handleClick(navigate)}
             />

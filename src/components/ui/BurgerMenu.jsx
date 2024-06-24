@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'
 export const BurgerMenu = () => {
     const [showMenu, setShowMenu] = useState()
     return (
-        <nav className="text-primary flex flex-col items-center gap-2 font-semibold sm:flex sm:flex-row-reverse sm:gap-4">
+        <nav className="flex flex-col items-center gap-2 font-semibold text-primary sm:flex sm:flex-row-reverse sm:gap-4">
             <button
-                className="hover:opacity-9 dark:text-secondary text-xl font-bold dark:bg-transparent"
+                className="hover:opacity-9 text-xl font-bold dark:bg-transparent dark:text-secondary"
                 onClick={() => setShowMenu(!showMenu)}
             >
                 {showMenu ? <GrClose /> : <GiHamburgerMenu />}

@@ -13,7 +13,7 @@ const Footer = () => {
                         <div className="flex items-center justify-center">
                             <Logo
                                 to={'/'}
-                                src={'../../public/thunder-logo.webp'}
+                                src={'/thunder-logo.webp'}
                                 alt={'footer logo'}
                                 className={'h-8 cursor-pointer'}
                                 handleClick={() => handleClick(navigate)}
