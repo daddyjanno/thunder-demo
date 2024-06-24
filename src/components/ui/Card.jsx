@@ -2,11 +2,15 @@ import { capitalize } from '../../utils/capitalizeText'
 
 const Card = (props) => {
     const { post, author } = props
+    const randomNumber = Math.floor(Math.random() * 100)
 
     return (
         <div className="cursor-pointer">
             <article className="flex max-w-sm flex-col items-center justify-center overflow-hidden rounded-lg shadow-lg">
-                <img src="https://picsum.photos/1200/500" alt="" />
+                <img
+                    src={`https://picsum.photos/400/200?random=${randomNumber}`}
+                    alt="article picture"
+                />
                 <section className="dark:bg-quaternary rounded-xl px-6 py-4">
                     <div className="bg-secondary dark:bg-ternary mb-2 h-20 w-full content-center overflow-hidden rounded-lg p-2 text-center drop-shadow-lg">
                         <h2 className="dark:text-primary line-clamp-2 break-words text-xl font-bold">
