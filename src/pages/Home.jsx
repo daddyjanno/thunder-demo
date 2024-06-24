@@ -1,48 +1,76 @@
-import Card from '../components/Card'
+import Card from '../components/ui/Card'
 import { TailwindIndicator } from '../utils/TailwindIndicator'
 import { useFetch } from '../utils/hook/useFetch'
 import { findAuthor } from '../utils/findAuthor'
-import { useNavigate } from 'react-router-dom'
-import Loader from '../components/Loader'
+import { Link } from 'react-router-dom'
+import Loader from '../components/ui/Loader'
+import Dropdown from '../components/ui/Dropdown'
+import { useState } from 'react'
 
 const Home = () => {
     const { posts, users, isLoading, error } = useFetch()
-    const navigate = useNavigate()
+    const [filter, setFilter] = useState('')
 
-    const handlePostClick = (id) => {
-        navigate(`/posts/${id}`)
+    function handleSelect(value) {
+        setFilter(value)
     }
 
     return error ? (
-        <span>{error}</span>
+        <div className="flex h-screen items-center justify-center">
+            <span>{error}</span>
+        </div>
     ) : isLoading ? (
         <Loader />
-    ) : posts ? (
+    ) : posts && users ? (
         <>
-            <main className="justify-center p-4">
-                {isLoading && <p>Chargement...</p>}
-                {posts && users && (
-                    <section className="container mx-auto">
-                        <div className="grid grid-cols-3 gap-4">
-                            {posts.map((post) => {
-                                const author = findAuthor(post.userId, users)
-                                return (
-                                    <Card
-                                        key={post.id}
-                                        title={post.title}
-                                        desc={post.body}
-                                        author={
-                                            author ? author.name : 'Unknown'
-                                        }
-                                        id={post.id}
-                                        handlePostClick={handlePostClick}
-                                    />
-                                )
-                            })}
-                        </div>
-                    </section>
-                )}
+            <main className="flex flex-col content-center justify-center gap-4 bg-slate-200 p-4 dark:bg-slate-800">
+                <section>
+                    <Dropdown
+                        data={users}
+                        onSelectChange={handleSelect}
+                        label={'Filtrer par auteur :'}
+                        value={filter}
+                    />
+                </section>
+                <section className="container mx-auto flex content-center justify-center">
+                    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+                        {filter
+                            ? posts
+                                  .filter(
+                                      (post) => post.userId === Number(filter),
+                                  )
+                                  .map((post) => {
+                                      const author = findAuthor(
+                                          post.userId,
+                                          users,
+                                      )
+                                      return (
+                                          <Link
+                                              to={`/posts/${post.id}`}
+                                              key={post.id}
+                                          >
+                                              <Card
+                                                  post={post}
+                                                  author={author}
+                                              />
+                                          </Link>
+                                      )
+                                  })
+                            : posts.map((post) => {
+                                  const author = findAuthor(post.userId, users)
+                                  return (
+                                      <Link
+                                          to={`/posts/${post.id}`}
+                                          key={post.id}
+                                      >
+                                          <Card post={post} author={author} />
+                                      </Link>
+                                  )
+                              })}
+                    </div>
+                </section>
             </main>
+
             <TailwindIndicator />
         </>
     ) : (
