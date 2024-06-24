@@ -6,7 +6,7 @@ body {
     @apply min-w-[300px] bg-white;
 }
 .dark body {
-    @apply bg-black text-white;
+    @apply bg-gray-900 text-white;
 }
 header {
     @apply bg-ternary;
