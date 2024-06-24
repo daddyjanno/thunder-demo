@@ -1,13 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom'
+import { handleClick } from '../utils/backToHome'
 import Logo from '../components/ui/Logo'
 
 const Footer = () => {
     const navigate = useNavigate()
 
-    const handleClick = () => {
-        navigate('/')
-        window.scrollTo(0, 0)
-    }
     return (
         <footer className="border-card w-full border-t p-2">
             <div className="m-auto w-full max-w-3xl px-2 py-4">
@@ -19,7 +16,7 @@ const Footer = () => {
                                 src={'../../public/thunder-logo.webp'}
                                 alt={'footer logo'}
                                 className={'h-8 cursor-pointer'}
-                                handleClick={handleClick}
+                                handleClick={() => handleClick(navigate)}
                             />
                         </div>
                         <div className="flex flex-col items-end gap-2 text-sm">
