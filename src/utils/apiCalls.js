@@ -21,7 +21,6 @@ export async function getUsers() {
             throw new Error('Network response was not OK')
         }
         const users = await response.json()
-        console.log('users', users)
         return users
     } catch (error) {
         return { data: null, error: 'Erreur API' }
