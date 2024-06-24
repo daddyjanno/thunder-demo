@@ -1,4 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
+import Logo from '../components/ui/Logo'
 
 const Footer = () => {
     const navigate = useNavigate()
@@ -8,16 +9,17 @@ const Footer = () => {
         window.scrollTo(0, 0)
     }
     return (
-        <footer className="border-card w-full border-t bg-gradient-to-r from-gray-900 via-gray-600 to-gray-500 p-2 text-white">
+        <footer className="border-card w-full border-t p-2">
             <div className="m-auto w-full max-w-3xl px-2 py-4">
                 <div className="flex flex-col">
                     <div className="mx-4 flex justify-between">
                         <div className="flex items-center justify-center">
-                            <img
-                                className="h-8 cursor-pointer"
-                                src="../../public/thunder-logo.webp"
-                                alt="thunder logo"
-                                onClick={handleClick}
+                            <Logo
+                                to={'/'}
+                                src={'../../public/thunder-logo.webp'}
+                                alt={'footer logo'}
+                                className={'h-8 cursor-pointer'}
+                                handleClick={handleClick}
                             />
                         </div>
                         <div className="flex flex-col items-end gap-2 text-sm">
