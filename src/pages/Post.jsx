@@ -22,7 +22,7 @@ export default function Post() {
             const user = users.find((user) => user.id === post.userId)
             setUser(user)
         }
-    }, [posts, users, id, post.userId])
+    }, [posts, users])
 
     return (
         <>

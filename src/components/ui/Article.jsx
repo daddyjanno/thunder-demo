@@ -1,3 +1,5 @@
+import { capitalize } from '../../utils/capitalizeText'
+
 const Article = (props) => {
     const { post, author } = props
     window.scrollTo(0, 0)
@@ -14,7 +16,7 @@ const Article = (props) => {
                     <div className="flex flex-col justify-between rounded-b leading-normal lg:rounded-b-none lg:rounded-r">
                         <div className="relative top-0 bg-white p-5 drop-shadow-xl dark:bg-quaternary sm:p-10 lg:-mt-32">
                             <h1 className="mb-2 text-3xl font-bold text-gray-900 dark:text-ternary">
-                                {post.title}
+                                {capitalize(post.title)}
                             </h1>
                             <p className="mt-2 text-xs text-gray-700 dark:text-primary">
                                 Written By:
@@ -22,7 +24,9 @@ const Article = (props) => {
                                     {author?.name}
                                 </span>
                             </p>
-                            <p className="my-5 text-base">{post.body}</p>
+                            <p className="my-5 text-base">
+                                {capitalize(post.body)}
+                            </p>
                             <h3 className="text-xl font-bold">
                                 Texte additionnel pour la mise en page
                             </h3>
