@@ -12,7 +12,7 @@ const Card = (props) => {
                     alt="article picture"
                 />
                 <section className="dark:bg-quaternary rounded-xl px-6 py-4">
-                    <div className="bg-secondary dark:bg-ternary mb-2 h-20 w-full content-center overflow-hidden rounded-lg p-2 text-center drop-shadow-lg">
+                    <div className="dark:bg-ternary mb-2 h-20 w-full overflow-hidden p-2 drop-shadow-lg">
                         <h2 className="dark:text-primary line-clamp-2 break-words text-xl font-bold">
                             {capitalize(post.title)}
                         </h2>
