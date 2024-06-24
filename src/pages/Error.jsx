@@ -14,7 +14,7 @@ const Error = () => {
                     </p>
                     <Link
                         to={'/'}
-                        className="bg-ternary hover:bg-secondary my-4 inline-flex rounded-lg px-5 py-2.5 text-center text-sm font-medium text-white"
+                        className="bg-ternary text-primary dark:bg-quaternary dark:text-ternary hover:bg-secondary my-4 inline-flex rounded-lg px-5 py-2.5 text-center text-sm font-medium"
                     >
                         Retour à l'accueil
                     </Link>
