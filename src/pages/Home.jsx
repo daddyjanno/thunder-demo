@@ -12,13 +12,7 @@ import { handleClick } from '../utils/backToHome'
 const Home = () => {
     const { posts, users, isLoading, error } = useFetch()
     const [filter, setFilter] = useState('')
-
     const navigate = useNavigate()
-
-    const handleClick = () => {
-        navigate('/')
-        window.scrollTo(0, 0)
-    }
 
     function handleSelect(value) {
         setFilter(value)
