@@ -1,5 +1,6 @@
 import { BsMoon, BsSun } from 'react-icons/bs'
 import { useState, useEffect } from 'react'
+import { Button } from '../ui/Button'
 
 export function ThemeToggle() {
     const [theme, setTheme] = useState('light')
@@ -17,9 +18,9 @@ export function ThemeToggle() {
     })
 
     return (
-        <button onClick={toggleTheme}>
-            <BsSun className="h-[1.5rem] w-[1.3rem] dark:hidden" />
-            <BsMoon className="hidden h-5 w-5 dark:block" />
+        <button onClick={toggleTheme} className="dark:bg-transparent">
+            <BsSun className="h-[1.5rem] w-[1.3rem] dark:hidden dark:bg-transparent" />
+            <BsMoon className="dark:text-secondary text-secondary hidden h-5 w-5 bg-transparent hover:text-gray-600 dark:block" />
             <span className="sr-only">Toggle theme</span>
         </button>
     )
