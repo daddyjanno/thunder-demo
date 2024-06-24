@@ -15,7 +15,7 @@ Créer une petite application web en utilisant React et TailwindCSS qui affiche 
 récupérés depuis une API publique. L'application doit permettre de visualiser les détails de chaque
 article et de filtrer les articles par catégorie.
 
-#### Description du projet :``
+#### Description du projet :
 
 1. Affichage de la liste d'articles : Les articles doivent être récupérés depuis l'API et affichés
    sous forme de cartes.
