@@ -1,14 +1,17 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useFetch } from '../utils/hook/useFetch'
 import Loader from '../components/ui/Loader'
 import { useEffect, useState } from 'react'
 import Article from '../components/ui/Article'
+import { handleClick } from '../utils/backToHome'
+import { Button } from '../components/ui/Button'
 
 export default function Post() {
     const { id } = useParams()
     const { posts, users, isLoading, error } = useFetch()
     const [post, setPost] = useState(null)
     const [user, setUser] = useState(null)
+    const navigate = useNavigate()
 
     useEffect(() => {
         if (posts) {
@@ -21,15 +24,26 @@ export default function Post() {
         }
     }, [posts, users])
 
-    return error ? (
-        <div className="flex h-screen items-center justify-center">
-            <span>{error}</span>
-        </div>
-    ) : isLoading ? (
-        <Loader />
-    ) : posts && users ? (
-        <Article post={post} author={user} />
-    ) : (
-        <Loader />
+    return (
+        <>
+            <Button
+                text={'Accueil'}
+                className={
+                    'bg-ternary text-primary dark:bg-quaternary dark:text-ternary m-2 mx-12 rounded-lg p-2'
+                }
+                onClick={() => handleClick(navigate)}
+            />
+            {error ? (
+                <div className="flex h-screen items-center justify-center">
+                    <span>{error}</span>
+                </div>
+            ) : isLoading ? (
+                <Loader />
+            ) : posts && users ? (
+                <Article post={post} author={user} />
+            ) : (
+                <Loader />
+            )}
+        </>
     )
 }
