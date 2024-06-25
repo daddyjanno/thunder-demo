@@ -4,9 +4,9 @@ import { useFetch } from '../utils/hook/useFetch'
 import { findAuthor } from '../utils/findAuthor'
 import { Link, useNavigate } from 'react-router-dom'
 import Loader from '../components/ui/Loader'
-import Dropdown from '../components/ui/Dropdown'
+import Select from '../components/ui/Select'
 import { useState } from 'react'
-import { Button } from '../components/ui/Button'
+import Button from '../components/ui/Button'
 import { handleClick } from '../utils/backToHome'
 
 const Home = () => {
@@ -28,7 +28,7 @@ const Home = () => {
         <>
             <main className="flex flex-col content-center justify-center gap-4 p-4 text-quaternary">
                 <section>
-                    <Dropdown
+                    <Select
                         data={users}
                         onSelectChange={handleSelect}
                         label={'Filtrer par auteur :'}
