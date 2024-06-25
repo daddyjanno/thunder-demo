@@ -5,13 +5,13 @@ const Article = (props) => {
     window.scrollTo(0, 0)
     return (
         <>
-            <div className="relative mx-auto min-h-[49rem] max-w-screen-xl p-5 sm:p-10 md:p-16">
-                <article className="overflow-hidden bg-cover bg-center">
+            <article className="relative mx-auto min-h-[49rem] max-w-screen-xl p-5 dark:bg-black sm:p-10 md:p-16">
+                <div className="overflow-hidden bg-cover bg-center">
                     <img
                         src={`https://picsum.photos/1200/500?random=${post.id}`}
                         alt="article picture"
                     />
-                </article>
+                </div>
                 <div className="mx-auto max-w-3xl">
                     <div className="flex flex-col justify-between rounded-b leading-normal lg:rounded-b-none lg:rounded-r">
                         <div className="relative top-0 bg-white p-5 drop-shadow-xl dark:bg-quaternary sm:p-10 lg:-mt-32">
@@ -69,7 +69,7 @@ const Article = (props) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </article>
         </>
     )
 }
