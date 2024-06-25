@@ -4,7 +4,8 @@ import Loader from '../components/ui/Loader'
 import { useEffect, useState } from 'react'
 import Article from '../components/ui/Article'
 import { handleClick } from '../utils/backToHome'
-import { Button } from '../components/ui/Button'
+import Button from '../components/ui/Button'
+import { TailwindIndicator } from '../utils/TailwindIndicator'
 
 export default function Post() {
     const { id } = useParams()
@@ -44,6 +45,7 @@ export default function Post() {
             ) : (
                 <Loader />
             )}
+            <TailwindIndicator />
         </>
     )
 }
