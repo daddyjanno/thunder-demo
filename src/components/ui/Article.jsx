@@ -6,15 +6,15 @@ const Article = (props) => {
     return (
         <>
             <article className="relative mx-auto min-h-[49rem] max-w-screen-xl p-5 dark:bg-black sm:p-10 md:p-16">
-                <div className="overflow-hidden bg-cover bg-center">
+                <div className="mx-auto max-w-3xl overflow-hidden bg-cover bg-center lg:max-w-none">
                     <img
                         src={`https://picsum.photos/1200/500?random=${post.id}`}
                         alt="article picture"
                     />
                 </div>
                 <div className="mx-auto max-w-3xl">
-                    <div className="flex flex-col justify-between rounded-b leading-normal lg:rounded-b-none lg:rounded-r">
-                        <div className="relative top-0 bg-white p-5 drop-shadow-xl dark:bg-quaternary sm:p-10 lg:-mt-32">
+                    <div className="flex flex-col justify-between leading-normal">
+                        <div className="relative top-0 bg-primary p-5 drop-shadow-lg dark:bg-quaternary sm:p-10 lg:-mt-32">
                             <h1 className="mb-2 text-3xl font-bold text-gray-900 dark:text-ternary">
                                 {capitalize(post.title)}
                             </h1>
