@@ -3,7 +3,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { GrClose } from 'react-icons/gr'
 import { Link } from 'react-router-dom'
 
-export const BurgerMenu = () => {
+const BurgerMenu = () => {
     const [showMenu, setShowMenu] = useState()
     return (
         <nav className="flex flex-col items-center gap-2 font-semibold text-primary sm:flex sm:flex-row-reverse sm:gap-4">
@@ -29,3 +29,5 @@ export const BurgerMenu = () => {
         </nav>
     )
 }
+
+export default BurgerMenu

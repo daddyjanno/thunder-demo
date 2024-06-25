@@ -1,10 +1,10 @@
-import { Button } from './Button'
+import Button from './Button'
 
-const Dropdown = ({ data, onSelectChange, value, label }) => {
+const Select = ({ data, onSelectChange, value, label }) => {
     function handleChange(event) {
         onSelectChange(event.target.value)
     }
-    function resetDropdown() {
+    function resetSelect() {
         onSelectChange('')
     }
 
@@ -17,6 +17,7 @@ const Dropdown = ({ data, onSelectChange, value, label }) => {
                         className="h-8 rounded-l-md bg-ternary px-2 text-primary dark:bg-secondary dark:text-quaternary"
                         value={value}
                         onChange={handleChange}
+                        defaultValue={''}
                     >
                         <option value={''}>---</option>
                         {data.map((item) => {
@@ -32,7 +33,7 @@ const Dropdown = ({ data, onSelectChange, value, label }) => {
                         className={
                             'h-8 rounded-r-md bg-ternary p-1 px-2 font-thin'
                         }
-                        onClick={resetDropdown}
+                        onClick={resetSelect}
                     />
                 </div>
             </div>
@@ -40,4 +41,4 @@ const Dropdown = ({ data, onSelectChange, value, label }) => {
     )
 }
 
-export default Dropdown
+export default Select
