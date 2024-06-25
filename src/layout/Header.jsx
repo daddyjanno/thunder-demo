@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { ThemeToggle } from '../components/theme/ThemeToggle'
-import { BurgerMenu } from '../components/ui/BurgerMenu'
+import BurgerMenu from '../components/ui/BurgerMenu'
 import { handleClick } from '../utils/backToHome'
 import Logo from '../components/ui/Logo'
 
